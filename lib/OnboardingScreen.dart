@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_clone/LoginScreen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   OnBoardingScreen({Key key}) : super(key: key);
@@ -125,13 +126,21 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       color:Color.fromRGBO(213,0,2, 1),
                     ),
                     child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text("SIGN IN", style: TextStyle(color: Colors.white),)
-                        ]
-                      ),
+                      child: InkWell(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text("SIGN IN", style: TextStyle(color: Colors.white),)
+                          ]
+                        ),
+                        onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => 
+                                new SignInScreen() 
+                              )
+                            );
+                        },
+                      ) 
                     ),
                   ),
 
